@@ -1,0 +1,9 @@
+development:
+  host: localhost
+  database: iaas_development
+  autocreate_indexes: true
+
+test:
+  host: localhost
+  database: iaas_test
+  autocreate_indexes: true

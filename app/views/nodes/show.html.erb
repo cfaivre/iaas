@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @node.name %>
+</p>
+
+<p>
+  <b>Ip:</b>
+  <%= @node.ip %>
+</p>
+
+<ol>
+<% for virtual_server in @node.virtual_servers %>
+  <li><%=h virtual_server.name %></li>
+<% end %>
+</ol>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Back', nodes_path %>

@@ -1,0 +1,6 @@
+<div class="field fields">
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to_function "remove", "remove_fields(this)" %>
+</div>
