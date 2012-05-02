@@ -10,9 +10,10 @@
   <%= @node.ip %>
 </p>
 
+Name | IP | Belongs To
 <ol>
 <% for virtual_server in @node.virtual_servers %>
-  <li><%=h virtual_server.name %></li>
+  <li><%=h virtual_server.name %> | <%=h virtual_server.ip %> | <%=h virtual_server.belongs_to %></li></li>
 <% end %>
 </ol>
 
