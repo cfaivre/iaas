@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 gem "bson_ext"
 gem "mongoid"
 gem "nested_form"
+gem 'jquery-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

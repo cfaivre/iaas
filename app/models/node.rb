@@ -3,5 +3,5 @@ class Node
   field :name, :type => String
   field :ip, :type => String
   embeds_many :virtual_servers
-  accepts_nested_attributes_for :virtual_servers, :reject_if => lambda{|a| a[:name].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :virtual_servers, :reject_if => lambda{|a| a[:name].blank? && a[:ip].blank? && a[:belongs_to].blank? }, :allow_destroy => true
 end
