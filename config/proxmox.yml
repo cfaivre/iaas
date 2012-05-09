@@ -1,0 +1,6 @@
+test:
+  uri: "http://aaapi.vagrantup.com/"
+  auth_uri_template: "http://%s:%s@aaapi.vagrantup.com/credentials/authenticate/?credential[identification]=%s&credential[proof]=%s"
+  auth_url_template: "http://aaapi.vagrantup.com/credentials/authenticate/"
+  username: registrar_proxy
+  password: secret

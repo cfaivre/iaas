@@ -5,6 +5,8 @@ gem "bson_ext"
 gem "mongoid"
 gem "nested_form"
 gem 'jquery-rails'
+gem "httparty"
+gem "settingslogic"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,7 +31,6 @@ group :test, :spec, :cucumber do
     gem "capybara"
     gem "cucumber"
     gem "database_cleaner"
-    gem "cucumber-rails"
     gem "spork"
     gem "launchy"
     gem "nifty-generators"
@@ -39,6 +40,10 @@ end
 group :test, :development do
   gem 'capistrano'
   gem 'capistrano-ext'
+end
+
+group :test do
+  gem "cucumber-rails"
 end
 
 
