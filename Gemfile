@@ -7,6 +7,7 @@ gem "nested_form"
 gem 'jquery-rails'
 gem "httparty"
 gem "settingslogic"
+gem 'therubyracer', '0.10.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
