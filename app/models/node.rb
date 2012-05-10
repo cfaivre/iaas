@@ -18,7 +18,7 @@ class Node
   def provision_virtual_server(options={})
     options.required! :storage_size, :memory_size
     if options[:storage_size] < self.storage_available && options[:memory_size] < self.memory_available
-      ProxmoxClient.virtual_server_create(options)
+      VirtualServer.provision(options)
     end
   end
 

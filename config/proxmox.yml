@@ -5,5 +5,6 @@ test:
   node_storage_template: "/api2/json/nodes/%s/storage"
   node_status_template: "/api2/json/nodes/%s/status"
   virtual_server_create_template: "/api2/json/nodes/%s/qemu"
+  virtual_server_delete_template: "/api2/json/nodes/%s/qemu/%s"
   username: registrar_proxy
   password: secret

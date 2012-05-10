@@ -19,8 +19,16 @@
   def self.virtual_server_create(options={})
     options.required! :node, :vmid
     @auth = {:username => ProxmoxSettings.username, :password => ProxmoxSettings.password}
-    response = HTTParty.get(ProxmoxSettings.virtual_server_create_template, :basic_auth => @auth, :query => options)
-    return response.body if response.code == 200
+    response = HTTParty.post(ProxmoxSettings.virtual_server_create_template, :basic_auth => @auth, :query => options)
+    return true if response.code == 200
+    return false
+  end
+
+  def self.virtual_server_delete(options={})
+    options.required! :node, :vmid
+    @auth = {:username => ProxmoxSettings.username, :password => ProxmoxSettings.password}
+    response = HTTParty.delete(ProxmoxSettings.virtual_server_delete_template, :basic_auth => @auth, :query => options)
+    return true if response.code == 200
     return false
   end
 
