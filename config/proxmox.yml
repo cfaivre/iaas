@@ -2,5 +2,8 @@ test:
   uri: "http://aaapi.vagrantup.com/"
   auth_uri_template: "http://%s:%s@aaapi.vagrantup.com/credentials/authenticate/?credential[identification]=%s&credential[proof]=%s"
   auth_url_template: "http://aaapi.vagrantup.com/credentials/authenticate/"
+  node_storage_template: "/api2/json/nodes/%s/storage"
+  node_status_template: "/api2/json/nodes/%s/status"
+  virtual_server_create_template: "/api2/json/nodes/%s/qemu"
   username: registrar_proxy
   password: secret
