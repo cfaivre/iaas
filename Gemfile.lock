@@ -82,6 +82,7 @@ GEM
       multi_json (~> 1.0)
       multi_xml
     i18n (0.6.0)
+    ipaddress (0.8.0)
     journey (1.0.3)
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
@@ -134,6 +135,8 @@ GEM
       activesupport (= 3.2.3)
       bundler (~> 1.0)
       railties (= 3.2.3)
+    rails_ip_validator (0.1.2)
+      activemodel (>= 3.0.0)
     railties (3.2.3)
       actionpack (= 3.2.3)
       activesupport (= 3.2.3)
@@ -203,6 +206,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   httparty
+  ipaddress
   jquery-rails
   launchy
   mocha
@@ -210,6 +214,7 @@ DEPENDENCIES
   nested_form
   nifty-generators
   rails (= 3.2.3)
+  rails_ip_validator
   rspec
   rspec-rails
   sass-rails (~> 3.2.3)

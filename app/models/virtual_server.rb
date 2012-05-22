@@ -3,6 +3,8 @@ class VirtualServer
   field :name, :type => String
   field :ip, :type => String
   field :belongs_to, :type => String
+  validates :ip, :ip => true
+  validates_uniqueness_of :ip, :message => "IP address is not unique"
   embedded_in :nodes
 
   def self.create(options={})

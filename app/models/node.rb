@@ -1,25 +1,32 @@
 class Node
   include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Paranoia
+
   field :name, :type => String
   field :ip, :type => String
-  field :storage_avilable, :type => Double
-  field :memory_available, :type > Double
+  field :storage_available, :type => Integer
+  field :memory_available, :type => Integer
+  validates :ip, :ip => true
+  validates_uniqueness_of :ip, :message => "IP address is not unique"
   embeds_many :virtual_servers
   accepts_nested_attributes_for :virtual_servers, :reject_if => lambda{|a| a[:name].blank? && a[:ip].blank? && a[:belongs_to].blank? }, :allow_destroy => true
 
-  def self.update_storage_available
-    self.storage_avilable = self.actual_storage_usage["avail"]
+  def self.statistics
+
   end
 
-  def self.update_memory_available
+  def self.update_statistics!
+    self.storage_available = self.actual_storage_usage["avail"]
     self.memory_available = self.actual_memory_usage["free"]
+    self.save!
   end
 
-  def provision_virtual_server(options={})
+  def self.provision_virtual_server(options={})
     options.required! :storage_size, :memory_size
-    if options[:storage_size] < self.storage_available && options[:memory_size] < self.memory_available
-      VirtualServer.provision(options)
-    end
+    node_name = JSON.parse(Nodes.where(:memory_available.gt => options[:memory_size], :storage_available.gt => options[:storage_size]).without(:_id, :_type).first).to_json["name"]
+    VirtualServer.create(options.merge!(:node_name => node_name))
+    self.update_staistics!
   end
 
   private

@@ -9,6 +9,9 @@ gem "httparty"
 gem "settingslogic"
 gem 'therubyracer', '0.10.1'
 
+gem "ipaddress"
+gem "rails_ip_validator"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
