@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Iaas::Application.config.secret_token = '2daac0164de3088770483856a0ba3d7847e5ca390ca4b2872e85ec8520c1fa3875e7e42197142fe3cf5b3b96330f8b6d6bd0237bffc41dd816951c38dd8062df'
+Iaas::Application.config.secret_token = 'd8a669d0fa17f6c003f2995bdc4a4abe140ebcb1248b26c1b4e884d9036c7574358fe2d98b9565348f4fa686be261da9e135d1060dc7241f47cd354ef556abc1'
