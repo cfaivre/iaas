@@ -24,7 +24,10 @@ describe NodesController do
   # Node. As you add validations to Node, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => "test_node_1",
+    :ip => "192.168.0.2",
+    :storage_available => 12,
+    :memory_available =>12}
   end
   
   # This should return the minimal set of values that should be in the session

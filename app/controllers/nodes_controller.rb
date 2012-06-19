@@ -41,6 +41,7 @@ class NodesController < ApplicationController
   # POST /nodes
   # POST /nodes.json
   def create
+    p params
     @node = Node.new(params[:node])
 
     respond_to do |format|

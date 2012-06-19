@@ -9,8 +9,8 @@ class Node
   field :memory_available, :type => Integer
   validates :ip, :ip => true
   validates_uniqueness_of :ip, :message => "IP address is not unique"
-  embeds_many :virtual_servers
-  accepts_nested_attributes_for :virtual_servers, :reject_if => lambda{|a| a[:name].blank? && a[:ip].blank? && a[:belongs_to].blank? }, :allow_destroy => true
+  has_many :virtual_servers
+  #accepts_nested_attributes_for :virtual_servers, :reject_if => lambda{|a| a[:name].blank? && a[:ip].blank? && a[:belongs_to].blank? }, :allow_destroy => true
 
   def self.statistics
 
